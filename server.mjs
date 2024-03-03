@@ -1,26 +1,29 @@
-// Require filesystems
-import express from "express";
-import dotenv from 'dotenv'
-import Movies from './models/moviesSchema';
-import Movies from './utilities/data.js'
+import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from "dotenv"
 
 
-
-
-
-// Invoke and Declare port #
 const app = express();
-const port = 3000;
+dotenv.config();
 
-//Middleware 
+const PORT = process.env.PORT || 3000;
+const MONGOURL = process.env.MONGO_URL
 
-app.use (express.json()) ;
+//Middleware
 
+app.use (express.json())
 
 //Routes
-...
 
+// connect to mongodb
+mongoose.connect(MONGOURL)
+.then (() => {
+    console.log('connected to Mongodb')
+}) .catch ((error) => {
+    console.log(error)
+})
 
+app.listen (3000, () => {
+    console.log(`server listening at ${3000}`)
 
-
+})
