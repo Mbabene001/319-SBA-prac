@@ -1,5 +1,7 @@
-import { Router } from 'express'
-const router = Router ()
+
+import express from 'express';
+const router = express.Router();
+
 
 
 
@@ -36,3 +38,4 @@ router.delete('/delete/:id', (req, res) => {
     res.send('Delete by ID movie')
 });
 
+export default router;

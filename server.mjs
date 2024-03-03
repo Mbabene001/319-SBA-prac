@@ -1,6 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from "dotenv"
+import movieRouter from './routes/movieroute.mjs';
+
 
 
 const app = express();
@@ -14,6 +16,8 @@ const MONGOURL = process.env.MONGO_URL
 app.use (express.json())
 
 //Routes
+
+app.use('/movie', movieRouter);
 
 // connect to mongodb
 mongoose.connect(MONGOURL)
