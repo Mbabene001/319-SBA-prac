@@ -3,24 +3,24 @@ import mongoose from 'mongoose';
 const movieSchema = mongoose.Schema({
     name: {
         type:String, 
-        required:[true, "Enter the name of the movie"]
+        required:true
     },
 
-    price: {
-        type:Number,
-        required:true,
+    createdNewMovie: {
+        type:String,
+        required:true
     },
         
-    age: {
-        type: Number,
-        required: true,
-        min: 0,
+    // age: {
+    //     type: Number,
+    //     required: true,
+    //     min: 0,
 
-    },
-    image: {
-        type:string,
-        required:false,
-    }
+    // },
+    // image: {
+    //     type: String,
+    //     required:false,
+    // }
      
 })
 

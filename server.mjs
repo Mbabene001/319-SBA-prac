@@ -19,6 +19,12 @@ app.use (express.json())
 
 app.use('/movie', movieRouter);
 
+
+app.listen (3000, () => {
+    console.log(`server listening at ${3000}`)
+
+})
+
 // connect to mongodb
 mongoose.connect(MONGOURL)
 .then (() => {
@@ -27,7 +33,3 @@ mongoose.connect(MONGOURL)
     console.log(error)
 })
 
-app.listen (3000, () => {
-    console.log(`server listening at ${3000}`)
-
-})
